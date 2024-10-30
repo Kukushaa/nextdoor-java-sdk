@@ -28,4 +28,10 @@
             <version>2.16.1</version>
         </dependency>
     </dependencies>
+
+    <scm>
+        <url>https://github.com/Kukushaa/nextdoor-java-sdk</url>
+        <connection>scm:git:git://github.com/Kukushaa/nextdoor-java-sdk.git</connection>
+        <developerConnection>scm:git:ssh://github.com:Kukushaa/nextdoor-java-sdk.git</developerConnection>
+    </scm>
 </project>
