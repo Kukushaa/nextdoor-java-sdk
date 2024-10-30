@@ -34,7 +34,6 @@ public abstract class NextDoorAPIRequest<T extends NextDoorModel> extends HTTPRe
         return sendHttpRequest(httpMethod, path, ConversionType.fromHTTPMethod(httpMethod));
     }
 
-    //TODO: Refactor method -- ??
     protected T sendHttpRequest(HttpMethod httpMethod, String path, ConversionType conversionType) throws APIRequestException {
         try {
             return dataParser.parseToObject(sendAndReturnResponse(path, httpMethod, conversionType).toString(), this.responseClass);
