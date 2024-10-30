@@ -28,18 +28,4 @@
             <version>2.16.1</version>
         </dependency>
     </dependencies>
-
-    <scm>
-        <url>https://github.com/Kukushaa/nextdoor-java-sdk</url>
-        <connection>scm:git:git://github.com/Kukushaa/nextdoor-java-sdk.git</connection>
-        <developerConnection>scm:git:ssh://github.com:Kukushaa/nextdoor-java-sdk.git</developerConnection>
-    </scm>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/Kukushaa/nextdoor-java-sdk</url>
-        </repository>
-    </distributionManagement>
 </project>
