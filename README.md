@@ -20,6 +20,12 @@ To add `nextdoor-java-sdk` to your maven project, you need to add `dependency` i
 </dependency>
 ```
 
+If you are using `gradle`, you need to add into your `yaml` file:
+
+```yaml
+implementation group: 'io.github.kukushaa', name: 'nextdoor-java-sdk', version: '1.0'
+```
+
 ### Create access token
 
 First of all, you need to generate `Access token` for your API calls, you can create it using simple code:
