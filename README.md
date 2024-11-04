@@ -5,6 +5,9 @@
 This SDK was written to make API calls for [NextDoor API](https://developer.nextdoor.com/reference/introduction) more
 easy and comfortable via Java.
 
+Maven central repository (sonatype)
+URL: [link](https://central.sonatype.com/artifact/io.github.kukushaa/nextdoor-java-sdk)
+
 ## Quick Start
 
 ### Add dependency
