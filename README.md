@@ -7,6 +7,19 @@ easy and comfortable via Java.
 
 ## Quick Start
 
+### Add dependency
+
+To add `nextdoor-java-sdk` to your maven project, you need to add `dependency` into your `pom.xml` file:
+
+```xml
+<!--https://github.com/Kukushaa/nextdoor-java-sdk-->
+<dependency>
+    <groupId>io.github.kukushaa</groupId>
+    <artifactId>nextdoor-java-sdk</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+
 ### Create access token
 
 First of all, you need to generate `Access token` for your API calls, you can create it using simple code:
