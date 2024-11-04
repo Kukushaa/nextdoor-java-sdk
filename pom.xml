@@ -46,6 +46,12 @@
             <name>Nika Beridze</name>
             <email>rexoman65@gmail.com</email>
         </developer>
+
+        <developer>
+            <id>KamadadzeLasha</id>
+            <name>Lasha Kamadadze</name>
+            <email>kamadadze833@gmail.com</email>
+        </developer>
     </developers>
 
     <scm>
