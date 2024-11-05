@@ -52,7 +52,7 @@ public class SearchFSFItems extends NextDoorModel implements Serializable {
     private String city;
 
     @JsonProperty("currency")
-    private String currency;
+    private Currency currency;
 
     @JsonProperty("description")
     private String description;
@@ -70,7 +70,7 @@ public class SearchFSFItems extends NextDoorModel implements Serializable {
 
     }
 
-    public SearchFSFItems(boolean available, double lat, double lon, int price, long expirationDate, String id, String city, String currency, String description, String title, String url, List<String> photos) {
+    public SearchFSFItems(boolean available, double lat, double lon, int price, long expirationDate, String id, String city, Currency currency, String description, String title, String url, List<String> photos) {
         this.available = available;
         this.lat = lat;
         this.lon = lon;
@@ -141,11 +141,11 @@ public class SearchFSFItems extends NextDoorModel implements Serializable {
         this.city = city;
     }
 
-    public String getCurrency() {
+    public Currency getCurrency() {
         return currency;
     }
 
-    public void setCurrency(String currency) {
+    public void setCurrency(Currency currency) {
         this.currency = currency;
     }
 
@@ -197,5 +197,16 @@ public class SearchFSFItems extends NextDoorModel implements Serializable {
                 ", url='" + url + '\'' +
                 ", photos=" + photos +
                 '}';
+    }
+
+    public enum Currency {
+        USD,
+        CAD,
+        AUD,
+        EUR,
+        GBP,
+        DKK,
+        NOK,
+        SEK
     }
 }

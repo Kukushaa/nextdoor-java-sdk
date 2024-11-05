@@ -27,14 +27,14 @@ public class FSF extends NextDoorURLEncodedModel {
     private String title;
     private String description;
     private String price;
-    private String category;
+    private CategoryType category;
     private Collection<String> imageAttachments;
 
     public FSF() {
 
     }
 
-    public FSF(String title, String description, String price, String category, Collection<String> imageAttachments) {
+    public FSF(String title, String description, String price, CategoryType category, Collection<String> imageAttachments) {
         this.title = title;
         this.description = description;
         this.price = price;
@@ -54,7 +54,7 @@ public class FSF extends NextDoorURLEncodedModel {
         return price;
     }
 
-    public String getCategory() {
+    public CategoryType getCategory() {
         return category;
     }
 
@@ -88,7 +88,7 @@ public class FSF extends NextDoorURLEncodedModel {
             return this;
         }
 
-        public FSFBuilder setCategory(String category) {
+        public FSFBuilder setCategory(CategoryType category) {
             this.fsf.category = category;
             return this;
         }
@@ -101,5 +101,30 @@ public class FSF extends NextDoorURLEncodedModel {
         public FSF build() {
             return this.fsf;
         }
+    }
+
+    public enum CategoryType {
+        APPLIANCES,
+        AUTOMOTIVE,
+        BABY_AND_KIDS,
+        BICYCLES,
+        CLOTHING,
+        ELECTRONICS,
+        FURNITURE,
+        GARAGE_SALES,
+        GARDEN,
+        HOME_DECOR,
+        HOME_SALES,
+        IN_SEARCH_OF,
+        MUSICAL_INSTRUMENTS,
+        NEIGHBOR_MADE,
+        NEIGHBOR_SERVICES,
+        OTHER,
+        PET_SUPPLIES,
+        PROPERTY_RENTALS,
+        SPORTS_AND_OUTDOORS,
+        TICKETS,
+        TOOLS,
+        TOYS_AND_GAMES
     }
 }

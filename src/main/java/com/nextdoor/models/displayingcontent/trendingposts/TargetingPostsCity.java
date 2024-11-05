@@ -193,7 +193,7 @@ public class TargetingPostsCity extends NextDoorModel implements Serializable {
         private String publicPostUrl;
 
         @JsonProperty("reaction_types")
-        private Map<String, Integer> reactionTypes;
+        private Map<ReactionType, Integer> reactionTypes;
 
         @JsonProperty("report_count")
         private int reportCount;
@@ -217,7 +217,7 @@ public class TargetingPostsCity extends NextDoorModel implements Serializable {
 
         }
 
-        public Post(Author author, String body, String category, List<String> comments, boolean commentClosed, int commentCount, long creationDateEpochSeconds, int downvoteCount, String embedUrl, boolean hasGeoTag, String id, boolean inPopularPostsCuration, double latitude, double longitude, String url, List<String> media, List<String> mediaFocalArea, String publicPostUrl, Map<String, Integer> reactionTypes, int reportCount, String scope, int score, String title, boolean userEnteredSubject, String videoPreviewUrl) {
+        public Post(Author author, String body, String category, List<String> comments, boolean commentClosed, int commentCount, long creationDateEpochSeconds, int downvoteCount, String embedUrl, boolean hasGeoTag, String id, boolean inPopularPostsCuration, double latitude, double longitude, String url, List<String> media, List<String> mediaFocalArea, String publicPostUrl, Map<ReactionType, Integer> reactionTypes, int reportCount, String scope, int score, String title, boolean userEnteredSubject, String videoPreviewUrl) {
             this.author = author;
             this.body = body;
             this.category = category;
@@ -389,11 +389,11 @@ public class TargetingPostsCity extends NextDoorModel implements Serializable {
             this.publicPostUrl = publicPostUrl;
         }
 
-        public Map<String, Integer> getReactionTypes() {
+        public Map<ReactionType, Integer> getReactionTypes() {
             return reactionTypes;
         }
 
-        public void setReactionTypes(Map<String, Integer> reactionTypes) {
+        public void setReactionTypes(Map<ReactionType, Integer> reactionTypes) {
             this.reactionTypes = reactionTypes;
         }
 
@@ -475,5 +475,26 @@ public class TargetingPostsCity extends NextDoorModel implements Serializable {
                     ", videoPreviewUrl='" + videoPreviewUrl + '\'' +
                     '}';
         }
+    }
+
+    public enum ReactionType {
+        thank_tulipupset,
+        metoo,
+        concerned,
+        spooky,
+        angry,
+        like2,
+        thank,
+        sad,
+        funny,
+        canada_flag,
+        shock,
+        plusone2,
+        like,
+        plusone,
+        quebec_flag,
+        important,
+        love,
+        agree
     }
 }
