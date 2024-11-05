@@ -13,7 +13,7 @@ All changes to this SDK will be documented in this file.
 ### Add
 
 - Copyright into Java files.
-- Developer Lasha Kamadadze into pom.xml
+- Developer Lasha Kamadadze into pom.xml.
 
 ## v1.0.0
 
