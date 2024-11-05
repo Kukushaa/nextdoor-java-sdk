@@ -2,7 +2,7 @@
 
 All changes to this SDK will be documented in this file.
 
-## v1.1
+## v1.0.1
 
 ### Refactor
 
