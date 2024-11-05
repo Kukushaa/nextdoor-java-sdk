@@ -19,7 +19,7 @@ To add `nextdoor-java-sdk` to your maven project, you need to add `dependency` i
 <dependency>
     <groupId>io.github.kukushaa</groupId>
     <artifactId>nextdoor-java-sdk</artifactId>
-    <version>1.0.1</version>
+    <version>1.1</version>
 </dependency>
 ```
 
