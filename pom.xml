@@ -12,7 +12,6 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -31,7 +30,14 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.11.3</version>
+            <version>5.9.3</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>1.9.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -58,6 +64,18 @@
             <id>KamadadzeLasha</id>
             <name>Lasha Kamadadze</name>
             <email>kamadadze833@gmail.com</email>
+        </developer>
+
+        <developer>
+            <id>intsk-miel</id>
+            <name>Ia Intskirveli</name>
+            <email>iaintskirveli@gmail.com</email>
+        </developer>
+
+        <developer>
+            <id>Gkakhiani</id>
+            <name>Gregory Kakhiani</name>
+            <email>gkakhiani@gmail.com</email>
         </developer>
     </developers>
 

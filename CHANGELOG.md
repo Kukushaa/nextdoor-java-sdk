@@ -6,7 +6,15 @@ All changes to this SDK will be documented in this file.
 
 ### Fix
 
-- Search API's query string validation
+- Search API's query string validation.
+
+### Add
+
+- 'junit-platform-launcher' in pom.xml.
+
+### Change
+
+- version of 'junit-jupiter' (5.11.3 -> 5.9.3).
 
 ## v1.0.1
 
