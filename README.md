@@ -1,4 +1,4 @@
-<div style="text-align: center" markdown="1">
+<div style="text-align: center">
    <h1>
       Java SDK for nextdoor
    </h1>
