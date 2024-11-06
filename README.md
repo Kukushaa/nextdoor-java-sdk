@@ -19,7 +19,7 @@ To add `nextdoor-java-sdk` to your maven project, you need to add `dependency` i
 <dependency>
     <groupId>io.github.kukushaa</groupId>
     <artifactId>nextdoor-java-sdk</artifactId>
-    <version>1.1</version>
+    <version>1.1.1</version>
 </dependency>
 ```
 
@@ -84,3 +84,12 @@ public class CreatePost {
 
 After executing code successfully, you will get `Post` object, which include `postToLink`, which is link to post, which
 you create (be carefull, don't share you access token and don't leak it!).
+
+## Known bugs
+
+This article is for known bugs that are in fixing progress.
+
+1) HTTP GET request failed java.lang.RuntimeException: java.lang.RuntimeException: org.json.JSONException: A JSONArray
+   text must start with '[' at 1 [character 2 line 1] -- This exception appears, because of nextdoor API return HTML
+   page and not JSON, we are waiting for nextdoor to fix this kind of issue (typically throws in displayingcontent
+   package classes).

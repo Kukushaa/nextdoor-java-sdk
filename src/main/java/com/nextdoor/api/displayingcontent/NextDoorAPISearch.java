@@ -25,7 +25,8 @@ import com.mashape.unirest.http.HttpMethod;
 import com.nextdoor.auth.NextDoorAPIAuth;
 import com.nextdoor.constants.DefaultURLS;
 import com.nextdoor.exception.APIRequestException;
-import com.nextdoor.models.*;
+import com.nextdoor.models.ContentType;
+import com.nextdoor.models.ConversionType;
 import com.nextdoor.models.displayingcontent.search.*;
 import com.nextdoor.share.core.NextDoorAPIRequest;
 import com.nextdoor.share.core.NextDoorAPIRequestNode;
@@ -71,31 +72,31 @@ public class NextDoorAPISearch extends NextDoorAPIRequestNode {
         }
 
         public NextDoorAPISearchPosts setLatitude(float latitude) {
-            this.addParameters("lat", latitude);
+            this.addQueryString("lat", latitude);
 
             return this;
         }
 
         public NextDoorAPISearchPosts setLongitude(float longitude) {
-            this.addParameters("lon", longitude);
+            this.addQueryString("lon", longitude);
 
             return this;
         }
 
         public NextDoorAPISearchPosts setRadius(float radius) {
-            this.addParameters("radius", radius);
+            this.addQueryString("radius", radius);
 
             return this;
         }
 
         public NextDoorAPISearchPosts setQuery(String query) {
-            this.addParameters("query", query);
+            this.addQueryString("query", query);
 
             return this;
         }
 
         public NextDoorAPISearchPosts setIncludeComments(boolean includeComments) {
-            this.addParameters("include_comments", includeComments);
+            this.addQueryString("include_comments", includeComments);
 
             return this;
         }
@@ -107,9 +108,9 @@ public class NextDoorAPISearch extends NextDoorAPIRequestNode {
 
         @Override
         protected void validateRequiredParams() {
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("lat"), "lat");
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("lon"), "lon");
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("radius"), "radius");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("lat"), "lat");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("lon"), "lon");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("radius"), "radius");
         }
 
         @Override
@@ -151,19 +152,19 @@ public class NextDoorAPISearch extends NextDoorAPIRequestNode {
         }
 
         public NextDoorAPISearchPostsBySignals setContentType(ContentType contentType) {
-            this.addParameters("content_type", contentType.name());
+            this.addQueryString("content_type", contentType.name());
 
             return this;
         }
 
         public NextDoorAPISearchPostsBySignals setIsodate(Date date) {
-            this.addParameters("isodate", date.toString());
+            this.addQueryString("isodate", date.toString());
 
             return this;
         }
 
         public NextDoorAPISearchPostsBySignals setIsodate(String date) {
-            this.addParameters("isodate", date);
+            this.addQueryString("isodate", date);
 
             return this;
         }
@@ -215,25 +216,25 @@ public class NextDoorAPISearch extends NextDoorAPIRequestNode {
         }
 
         public NextDoorAPISearchFSFItems setLatitude(float latitude) {
-            this.addParameters("lat", latitude);
+            this.addQueryString("lat", latitude);
 
             return this;
         }
 
         public NextDoorAPISearchFSFItems setLongitude(float longitude) {
-            this.addParameters("lon", longitude);
+            this.addQueryString("lon", longitude);
 
             return this;
         }
 
         public NextDoorAPISearchFSFItems setRadius(float radius) {
-            this.addParameters("radius", radius);
+            this.addQueryString("radius", radius);
 
             return this;
         }
 
         public NextDoorAPISearchFSFItems setQuery(String query) {
-            this.addParameters("query", query);
+            this.addQueryString("query", query);
 
             return this;
         }
@@ -245,9 +246,9 @@ public class NextDoorAPISearch extends NextDoorAPIRequestNode {
 
         @Override
         protected void validateRequiredParams() {
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("lat"), "lat");
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("lon"), "lon");
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("radius"), "radius");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("lat"), "lat");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("lon"), "lon");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("radius"), "radius");
         }
 
         @Override
@@ -289,25 +290,25 @@ public class NextDoorAPISearch extends NextDoorAPIRequestNode {
         }
 
         public NextDoorAPISearchEvents setLatitude(float latitude) {
-            this.addParameters("lat", latitude);
+            this.addQueryString("lat", latitude);
 
             return this;
         }
 
         public NextDoorAPISearchEvents setLongitude(float longitude) {
-            this.addParameters("lon", longitude);
+            this.addQueryString("lon", longitude);
 
             return this;
         }
 
         public NextDoorAPISearchEvents setRadius(float radius) {
-            this.addParameters("radius", radius);
+            this.addQueryString("radius", radius);
 
             return this;
         }
 
         public NextDoorAPISearchEvents setQuery(String query) {
-            this.addParameters("query", query);
+            this.addQueryString("query", query);
 
             return this;
         }
@@ -319,9 +320,9 @@ public class NextDoorAPISearch extends NextDoorAPIRequestNode {
 
         @Override
         protected void validateRequiredParams() {
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("lat"), "lat");
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("lon"), "lon");
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("radius"), "radius");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("lat"), "lat");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("lon"), "lon");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("radius"), "radius");
         }
 
         @Override
@@ -363,25 +364,25 @@ public class NextDoorAPISearch extends NextDoorAPIRequestNode {
         }
 
         public NextDoorAPISearchBusinesses setLatitude(float latitude) {
-            this.addParameters("lat", latitude);
+            this.addQueryString("lat", latitude);
 
             return this;
         }
 
         public NextDoorAPISearchBusinesses setLongitude(float longitude) {
-            this.addParameters("lon", longitude);
+            this.addQueryString("lon", longitude);
 
             return this;
         }
 
         public NextDoorAPISearchBusinesses setRadius(float radius) {
-            this.addParameters("radius", radius);
+            this.addQueryString("radius", radius);
 
             return this;
         }
 
         public NextDoorAPISearchBusinesses setQuery(String query) {
-            this.addParameters("query", query);
+            this.addQueryString("query", query);
 
             return this;
         }
@@ -393,10 +394,10 @@ public class NextDoorAPISearch extends NextDoorAPIRequestNode {
 
         @Override
         protected void validateRequiredParams() {
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("lat"), "lat");
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("lon"), "lon");
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("radius"), "radius");
-            NextDoorUtil.ensureObjectNotNull(this.getParamInternal("query"), "query");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("lat"), "lat");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("lon"), "lon");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("radius"), "radius");
+            NextDoorUtil.ensureStringNotNull(this.getQueryString("query"), "query");
         }
 
         @Override

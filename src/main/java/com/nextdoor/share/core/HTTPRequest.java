@@ -101,6 +101,10 @@ public abstract class HTTPRequest {
         return this.params.get(param);
     }
 
+    protected String getQueryString(String key) {
+        return this.queryString.get(key);
+    }
+
     protected void addHeader(Map<String, String> additionalHeaders) {
         this.additionalHeaders.putAll(additionalHeaders);
     }
@@ -109,15 +113,15 @@ public abstract class HTTPRequest {
         this.additionalHeaders = additionalHeaders;
     }
 
-    protected void addParameters(String key, String value) {
+    protected void addQueryString(String key, String value) {
         this.queryString.put(key, value);
     }
 
-    protected void addParameters(String key, Object value) {
-        this.queryString.put(key, String.valueOf(value));
+    protected void addQueryString(String key, Object value) {
+        addQueryString(key, String.valueOf(value));
     }
 
-    protected void addParameters(Map<String, String> queryString) {
+    protected void addQueryString(Map<String, String> queryString) {
         this.queryString.putAll(queryString);
     }
 
@@ -139,7 +143,7 @@ public abstract class HTTPRequest {
             return;
         }
 
-        this.addParameters(key, value);
+        this.addQueryString(key, value);
     }
 
     protected void validateParams(String... params) {
