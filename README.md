@@ -1,15 +1,13 @@
-<div style="text-align: center">
-   <h1>
-      Java SDK for nextdoor
-   </h1>
-</div>
+<h1 style="text-align: center">
+   Java SDK for nextdoor
+</h1>
 
 <p style="text-align: center">
-   <a href="https://central.sonatype.com/artifact/io.github.kukushaa/nextdoor-java-sdk">
+   <a href="https://central.sonatype.com/artifact/io.github.kukushaa/nextdoor-java-sdk" target="_blank">
       <img src="https://img.shields.io/maven-central/v/io.github.kukushaa/nextdoor-java-sdk?logo=sonatype&link=https%3A%2F%2Fcentral.sonatype.com%2Fartifact%2Fio.github.kukushaa%2Fnextdoor-java-sdk" alt="Sonatype Logo">
    </a>
 
-   <a href="https://github.com/Kukushaa/nextdoor-java-sdk/blob/main/LICENSE.md">
+   <a href="https://github.com/Kukushaa/nextdoor-java-sdk/blob/main/LICENSE.md" target="_blank">
       <img src="https://img.shields.io/github/license/Kukushaa/nextdoor-java-sdk" alt="License">
    </a>
 </p>
