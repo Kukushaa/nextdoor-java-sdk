@@ -1,18 +1,28 @@
-# Nextdoor SDK for Java
+<div style="text-align: center" markdown="1">
+   <h1>
+      Java SDK for nextdoor
+   </h1>
+</div>
+
+<p style="text-align: center">
+   <a href="https://central.sonatype.com/artifact/io.github.kukushaa/nextdoor-java-sdk">
+      <img src="https://img.shields.io/maven-central/v/io.github.kukushaa/nextdoor-java-sdk?logo=sonatype&link=https%3A%2F%2Fcentral.sonatype.com%2Fartifact%2Fio.github.kukushaa%2Fnextdoor-java-sdk" alt="Sonatype Logo">
+   </a>
+
+   <a href="https://github.com/Kukushaa/nextdoor-java-sdk/blob/main/LICENSE.md">
+      <img src="https://img.shields.io/github/license/Kukushaa/nextdoor-java-sdk" alt="License">
+   </a>
+</p>
 
 ## Introduction
 
-This SDK was written to make API calls for [NextDoor API](https://developer.nextdoor.com/reference/introduction) more
-easy and comfortable via Java.
+This SDK was written to make API calls for nextdoor API more easy and comfortable via Java.
 
-Maven central repository (sonatype)
-URL: [link](https://central.sonatype.com/artifact/io.github.kukushaa/nextdoor-java-sdk)
+For nextdoor API official documentation, visit their [website](https://developer.nextdoor.com/reference/introduction).
 
-## Quick Start
+## Installation
 
-### Add dependency
-
-To add `nextdoor-java-sdk` to your maven project, you need to add `dependency` into your `pom.xml` file:
+Recomended installation of SDK is via `maven` (or gradle etc.). Last version of dependency which need to inject:
 
 ```xml
 <!--https://github.com/Kukushaa/nextdoor-java-sdk-->
@@ -23,9 +33,11 @@ To add `nextdoor-java-sdk` to your maven project, you need to add `dependency` i
 </dependency>
 ```
 
-### Create access token
+## Examples
 
-First of all, you need to generate `Access token` for your API calls, you can create it using simple code:
+### Create/Get access token
+
+To create/get first access token via our SDK, use generated code below:
 
 ```java
 import com.nextdoor.exception.APIRequestException;
@@ -56,12 +68,16 @@ public class GenerateAccessToken {
 }
 ```
 
-After executing code successfully, you will get `AccessToken` object, which include `accessToken`, which you can use for
-making API calls (be carefull, don't share you access token and don't leak it!).
+After executing code successfully, it will return `AccessToken` object, which include `accessToken` object, which we can
+get via method `.getAccessToken()` (be carefull, don't share you access token!).
 
-### Create first post
+[documentation](https://developer.nextdoor.com/reference/sharing-get-access-token)
 
-After we generate our access token, we can create first Post on our page with code bellow:
+### Create post
+
+After creating/getting access token, lest create first post via our SDK.
+
+To make that possible, use generated code below:
 
 ```java
 public class CreatePost {
@@ -82,14 +98,16 @@ public class CreatePost {
 }
 ```
 
-After executing code successfully, you will get `Post` object, which include `postToLink`, which is link to post, which
-you create (be carefull, don't share you access token and don't leak it!).
+After executing code successfully, it will return `Post` object, which include `postToLink` object, which represents
+link to post that we created, to get it use method `post.getLinkToPost()`.
+
+[documentation](https://developer.nextdoor.com/reference/create-post)
 
 ## Known bugs
 
 This article is for known bugs that are in fixing progress.
 
-1) HTTP GET request failed java.lang.RuntimeException: java.lang.RuntimeException: org.json.JSONException: A JSONArray
-   text must start with '[' at 1 [character 2 line 1] -- This exception appears, because of nextdoor API return HTML
+1) `HTTP GET request failed java.lang.RuntimeException: java.lang.RuntimeException: org.json.JSONException: A JSONArray
+   text must start with '[' at 1 [character 2 line 1]` -- This exception appears, because of nextdoor API return HTML
    page and not JSON, we are waiting for nextdoor to fix this kind of issue (typically throws in displayingcontent
    package classes).
