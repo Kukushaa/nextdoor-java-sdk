@@ -20,7 +20,7 @@ For nextdoor API official documentation, visit their [website](https://developer
 
 ## Installation
 
-Recomended installation of SDK is via `maven` (or gradle etc.). Last version of dependency which need to inject:
+Recommended installation of SDK is via `maven` (or gradle etc.). The last version of dependency that needs to be injected:
 
 ```xml
 <!--https://github.com/Kukushaa/nextdoor-java-sdk-->
@@ -35,7 +35,7 @@ Recomended installation of SDK is via `maven` (or gradle etc.). Last version of 
 
 ### Create/Get access token
 
-To create/get first access token via our SDK, use generated code below:
+To create/get the first access token via our SDK, use the generated code below:
 
 ```java
 import com.nextdoor.exception.APIRequestException;
@@ -66,16 +66,16 @@ public class GenerateAccessToken {
 }
 ```
 
-After executing code successfully, it will return `AccessToken` object, which include `accessToken` object, which we can
-get via method `.getAccessToken()` (be carefull, don't share you access token!).
+After executing the code successfully, it will return `AccessToken` object, which includes `accessToken` object, which we can
+get via method `getAccessToken()` (be careful, don't share your access token!).
 
 [documentation](https://developer.nextdoor.com/reference/sharing-get-access-token)
 
 ### Create post
 
-After creating/getting access token, lest create first post via our SDK.
+After creating/getting an access token, we can create the first post via our SDK.
 
-To make that possible, use generated code below:
+To make that possible, use the generated code below:
 
 ```java
 public class CreatePost {
@@ -96,16 +96,18 @@ public class CreatePost {
 }
 ```
 
-After executing code successfully, it will return `Post` object, which include `postToLink` object, which represents
-link to post that we created, to get it use method `post.getLinkToPost()`.
+After executing the code successfully, it will return the `Post` object, which includes `postToLink` object, which represents
+link to the post that we created, to get it use the method `getLinkToPost()`.
 
 [documentation](https://developer.nextdoor.com/reference/create-post)
+
+All classes, which are making requests to nextdoor API, are in the `api` package.
 
 ## Known bugs
 
 This article is for known bugs that are in fixing progress.
 
 1) `HTTP GET request failed java.lang.RuntimeException: java.lang.RuntimeException: org.json.JSONException: A JSONArray
-   text must start with '[' at 1 [character 2 line 1]` -- This exception appears, because of nextdoor API return HTML
+   text must start with '[' at 1 [character 2 line 1]` -- This exception appears because nextdoor API returns HTML
    page and not JSON, we are waiting for nextdoor to fix this kind of issue (typically throws in displayingcontent
    package classes).
