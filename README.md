@@ -14,7 +14,7 @@
 
 ## Introduction
 
-This SDK was written to make API calls for nextdoor API more easy and comfortable via Java.
+This SDK was written to make API calls for nextdoor API easier and more convenient via Java.
 
 For nextdoor API official documentation, visit their [website](https://developer.nextdoor.com/reference/introduction).
 
