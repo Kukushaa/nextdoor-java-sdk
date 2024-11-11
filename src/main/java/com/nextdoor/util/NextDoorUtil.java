@@ -46,4 +46,8 @@ public final class NextDoorUtil {
 
         return simpleDateFormat.format(date);
     }
+
+    public static boolean isEmpty(String string) {
+        return string == null || string.isEmpty();
+    }
 }

@@ -28,7 +28,9 @@ import com.nextdoor.exception.HTTPRequestFailureException;
 import com.nextdoor.internal.DataParser;
 import com.nextdoor.models.ConversionType;
 import com.nextdoor.models.NextDoorModel;
+import com.nextdoor.util.NextDoorUtil;
 
+import java.util.Collections;
 import java.util.List;
 
 public abstract class NextDoorAPIRequest<T extends NextDoorModel> extends HTTPRequest {
@@ -57,7 +59,12 @@ public abstract class NextDoorAPIRequest<T extends NextDoorModel> extends HTTPRe
 
     protected T sendHttpRequest(HttpMethod httpMethod, String path, ConversionType conversionType) throws APIRequestException {
         try {
-            return dataParser.parseToObject(sendAndReturnResponse(path, httpMethod, conversionType).toString(), this.responseClass);
+            String body = sendAndReturnResponse(path, httpMethod, conversionType);
+//            if(NextDoorUtil.isEmpty(body)) {
+//                throw new APIRequestException("Body is empty");
+//            }
+
+            return dataParser.parseToObject(body, this.responseClass);
         } catch (DataParser.DataParserException e) {
             throw new HTTPRequestFailureException("HTTP " + httpMethod + " request failed " + e.getLocalizedMessage());
         }
@@ -65,7 +72,13 @@ public abstract class NextDoorAPIRequest<T extends NextDoorModel> extends HTTPRe
 
     protected List<T> sendHttpRequestForList(HttpMethod httpMethod, String path, ConversionType conversionType) throws APIRequestException {
         try {
-            return dataParser.parseToList(sendAndReturnResponse(path, httpMethod, conversionType).toString(), this.responseClass);
+            String body = sendAndReturnResponse(path, httpMethod, conversionType);
+
+//            if (NextDoorUtil.isEmpty(body)) {
+//                return Collections.singletonList(this.responseClass.newInstance());
+//            }
+
+            return dataParser.parseToList(body, this.responseClass);
         } catch (DataParser.DataParserException e) {
             throw new HTTPRequestFailureException("HTTP " + httpMethod + " request failed " + e.getLocalizedMessage());
         }

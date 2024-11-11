@@ -22,7 +22,6 @@
 package com.nextdoor.internal;
 
 import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.nextdoor.models.ConversionType;
@@ -31,20 +30,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HttpClient {
-    public HttpResponse<JsonNode> sendRequestWithBody(String url, String body, Map<String, String> headers) throws UnirestException {
+    public HttpResponse<String> sendRequestWithBody(String url, String body, Map<String, String> headers) throws UnirestException {
         return Unirest.post(url)
                 .headers(headers)
                 .body(body)
-                .asJson();
+                .asString();
     }
 
-    public HttpResponse<JsonNode> sendGetRequest(String url, Map<String, String> headers) throws UnirestException {
+    public HttpResponse<String> sendGetRequest(String url, Map<String, String> headers) throws UnirestException {
         Map<String, String> allHeaders = new HashMap<>(headers);
         allHeaders.putAll(this.getDefaultHeadersForGetRequest());
 
         return Unirest.get(url)
                 .headers(allHeaders)
-                .asJson();
+                .asString();
     }
 
     public Map<String, String> getHeadersByConversionType(ConversionType conversionType) {
